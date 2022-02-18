@@ -1195,6 +1195,11 @@ cc_library {
         "//apex_available:platform",
         "com.android.media.swcodec",
     ],
+
+    // Fails to compile when global ThinLTO is enabled for this library
+    lto: {
+        never: true,
+    },
 }
 
 cc_fuzz {
